@@ -1,0 +1,24 @@
+{
+  "name": "desafio-clase-6",
+  "version": "1.0.0",
+  "description": "servidor en express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tepexic/desafio-clase-6.git"
+  },
+  "author": "Jesus Velazquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tepexic/desafio-clase-6/issues"
+  },
+  "homepage": "https://github.com/Tepexic/desafio-clase-6#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
