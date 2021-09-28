@@ -14,7 +14,7 @@
 
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = 3031;
 
 const Contenedor = require("./Contenedor");
 
@@ -27,9 +27,11 @@ app.get("/productos", async (req, res, next) => {
 
 app.get("/productoRandom", async (req, res, next) => {
   const productos = await contenedor.getAll();
-  // Generar un numero aleatorio entre 0 y la longitud del arreglo de productos
-  const id = Math.round(Math.random() * productos.length);
-  res.json(await contenedor.getById(id));
+  // crear un arreglo con todos los ids disponibles de los productos
+  const ids = productos.map((p) => p.id);
+  // Generar un numero aleatorio entre 0 y la longitud del arreglo de ids
+  const randomIdIndex = Math.round(Math.random() * ids.length);
+  res.json(await contenedor.getById(ids[randomIdIndex]));
 });
 
 const server = app.listen(PORT, () => {
